@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package archivalstorage;
+
+service ArchivalStorage{
+    rpc retrieveUser(UserID) returns (User);
+}
+
+message UserID{
+    int64 userID = 1;
+}
+
+message User{
+    int64 userID = 1;
+    string email = 2;
+    string userData = 3;
+    repeated string rawData = 4;
+    repeated string predictedData = 5;
+    repeated string loggedIndata = 6;
+    repeated string loggedOutData = 7; 
+}
